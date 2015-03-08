@@ -1,0 +1,31 @@
+{
+  "name": "chars.js",
+  "version": "0.1.5",
+  "description": "A tiny Javascript single-ascii-character utility/library",
+  "main": "chars.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phazelift/chars.js"
+  },
+  "keywords": [
+    "char",
+    "chars",
+    "character",
+    "characters",
+    "ascii",
+    "ordinal",
+    "tools",
+    "library"
+  ],
+  "author": "Dennis Raymondo <phazelift@gmail.com> (https://github.com/phazelift/)",
+  "license": "GPL-3",
+  "bugs": {
+    "url": "https://github.com/phazelift/chars.js/issues"
+  },
+  "homepage": "https://github.com/phazelift/chars.js",
+  "dependencies": { "types.js": "1.3.9" },
+  "devDependencies": {}
+}
