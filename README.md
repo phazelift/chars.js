@@ -1,23 +1,22 @@
 chars.js
 ========
 
-All about single ascii characters. Experimental and under development, will evolve over time.
+About single ascii characters.
 
-I use Chars mainly as a document for static character related data and methods. Parts of it can be found in my
-other libraries, like strings.js for example.
+<br/>
 
+>install with npm: `npm install --save chars.js`
+
+<br/>
 ___
 
-You can use `npm install chars.js` if you're on node.js.
-
-___
 API
 ---
 
 **Chars.ASCII_RANGE_...**
 
 > Chars.ASCII_RANGE_... are `static const` arrays with only two indices: [bottomOfRange, topOfRange]. These ranges are directly
-> related to the ordinal values from the ascii-table.
+> related to the ordinal values of the ascii-table.
 
 > The following ranges are defined in chars.js:
 
@@ -47,7 +46,8 @@ API
 > Returns the ascii character found at ordinal.
 
 ```javascript
-var space= Chars.ascii( 32 );				// ' '
+var space= Chars.ascii( 32 );
+// ' '
 ```
 
 **Chars.ordinal**
@@ -56,7 +56,8 @@ var space= Chars.ascii( 32 );				// ' '
 > Returns the ordinal for char.
 
 ```javascript
-var ordSpace= Chars.ordinal( ' ' );			// 32
+var ordSpace= Chars.ordinal( ' ' );			
+// 32
 ```
 
 **Chars.isUpper**
@@ -65,7 +66,8 @@ var ordSpace= Chars.ordinal( ' ' );			// 32
 > Returns true if char is uppercase.
 
 ```javascript
-var test= Chars.isUpper( 'z' );				// false
+var test= Chars.isUpper( 'z' );				
+// false
 ```
 
 **Chars.isLower**
@@ -74,7 +76,8 @@ var test= Chars.isUpper( 'z' );				// false
 > Returns true if char is lowercase.
 
 ```javascript
-var test= Chars.isLower( 'z' );				// true
+var test= Chars.isLower( 'z' );				
+// true
 ```
 
 **Chars.isAlpha**
@@ -83,7 +86,8 @@ var test= Chars.isLower( 'z' );				// true
 > Returns true if char is uppercase or lowercase alpha.
 
 ```javascript
-var test= Chars.isAlpha( 'a' );				// true
+var test= Chars.isAlpha( 'a' );				
+// true
 ```
 
 **Chars.isNumeric**
@@ -92,8 +96,10 @@ var test= Chars.isAlpha( 'a' );				// true
 > Returns true if char is a number.
 
 ```javascript
-var test= Chars.isNumeric( '0' );			// true
-var test= Chars.isNumeric( 0 );				// true
+var test= Chars.isNumeric( '0' );			
+// true
+var test= Chars.isNumeric( 0 );				
+// true
 ```
 
 **Chars.isSpecial**
@@ -103,7 +109,8 @@ var test= Chars.isNumeric( 0 );				// true
 
 
 ```javascript
-var test= Chars.isSpecial( '.' );			// true
+var test= Chars.isSpecial( '.' );			
+// true
 ```
 
 **Chars.isAlphaNumeric**
@@ -112,8 +119,10 @@ var test= Chars.isSpecial( '.' );			// true
 > Returns true if char is a uppercase, lowercase or number.
 
 ```javascript
-var test= Chars.isAlphaNumeric( 'A' );		// true
-var test= Chars.isAlphaNumeric( 1 );		// true
+var test= Chars.isAlphaNumeric( 'A' );		
+// true
+var test= Chars.isAlphaNumeric( 1 );		
+// true
 ```
 
 **Chars.random**
@@ -142,7 +151,8 @@ var char= new Chars( '?' );
 > Returns this.char
 
 ```javascript
-console.log( char.get() );					// '?'
+console.log( char.get() );					
+// '?'
 ```
 
 **Chars.prototype.set**
@@ -151,7 +161,8 @@ console.log( char.get() );					// '?'
 > char can be a number character or ordinal. If char is an ordinal, the character represented by ordinal will be set.
 
 ```javascript
-console.log( char.set('!') );				// '!'
+console.log( char.set('!') );				
+// '!'
 ```
 
 **Chars.prototype.next**
@@ -161,7 +172,8 @@ console.log( char.set('!') );				// '!'
 > ahead, limited by this.range, if amount is set.
 
 ```javascript
-console.log( char.next() );					//	'@'
+console.log( char.next() );					
+//	'@'
 ```
 
 **Chars.prototype.prev**
@@ -174,7 +186,8 @@ console.log( char.next() );					//	'@'
 > this bound.
 
 ```javascript
-console.log( char.prev() );					//	'!'
+console.log( char.prev() );					
+//	'!'
 ```
 
 The remaining methods are similar in working as the static versions by the same name, they only do not require a
@@ -201,16 +214,26 @@ string argument, they use the objects string instead.
 **Chars.prototype.random**
 > `<string> random()`
 
+---
+
 change log
 ==========
 
+0.2.0
+
+-	changed license to MIT
+-	updated readme
+
+---
+
 0.1.5
 
-chars.js now depends on and extends types.js version 1.3.9 (1.8Kb minified).
+-	chars.js now depends on types.js.
+-	Some fixes and cleanup.
+-	Added some basic Jasmine tests, still incomplete, will finish later
+-	Updated the readme.
 
-Some fixes and cleanup.
+___
 
-Added some basic Jasmine tests, still incomplete, will finish later
-
-Updated the readme.
-__________________________________________
+###license
+MIT
