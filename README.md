@@ -22,14 +22,14 @@ API
 
 |Range									|Ordinal range	|Characters found in range
 |:-------------------------------|--------------|:-----------------------------
-|Chars.ASCII_RANGE_UPPERCASE		|[65,90]			|`ABCDEFGHIJKLMNOPQRSTUVWXYZ`
-|Chars.ASCII_RANGE_LOWERCASE		|[97,122]		|`abcdefghijklmnopqrstuvwxyz`
-|Chars.ASCII_RANGE_NUMBERS			|[48,57]			|`0123456789`
-|Chars.ASCII_RANGE_SPECIAL_1		|[32,47]			|` !"#$%&'()*+,-./`
-|Chars.ASCII_RANGE_SPECIAL_2		|[58,64]			|`:;<=>?@`
-|Chars.ASCII_RANGE_SPECIAL_3		|[91,96]			|`[\]^_`\`
-|Chars.ASCII_RANGE_SPECIAL_4		|[123,126]		|`{|}~`
-|Chars.ASCII_RANGE_ALL(printable)|[32,126]		|` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`\``abcdefghijklmnopqrstuvwxyz{|}~`
+|Chars.ASCII_RANGE_UPPERCASE		|[65,90]			|ABCDEFGHIJKLMNOPQRSTUVWXYZ
+|Chars.ASCII_RANGE_LOWERCASE		|[97,122]		|abcdefghijklmnopqrstuvwxyz
+|Chars.ASCII_RANGE_NUMBERS			|[48,57]			|0123456789
+|Chars.ASCII_RANGE_SPECIAL_1		|[32,47]			|(white space) !"#$%&'()*+,-./
+|Chars.ASCII_RANGE_SPECIAL_2		|[58,64]			|:;<=>?@
+|Chars.ASCII_RANGE_SPECIAL_3		|[91,96]			|[\\]^_`
+|Chars.ASCII_RANGE_SPECIAL_4		|[123,126]		|{\|}~
+|Chars.ASCII_RANGE_ALL(printable)|[32,126]		|(white space) !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_abcdefghijklmnopqrstuvwxyz{\|}~`
 
 
 **Chars.REGEXP_SPECIAL_CHARS**
