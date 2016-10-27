@@ -1,6 +1,6 @@
 {
   "name": "chars.js",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A single-ascii-character utility",
   "main": "chars.min.js",
   "scripts": {
