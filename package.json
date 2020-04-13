@@ -1,10 +1,12 @@
 {
   "name": "chars.js",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A single-ascii-character utility",
   "main": "chars.min.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "uglify": "uglifyjs chars.js -c -m -o chars.min.js",
+    "build": "coffee -c --transpile chars.coffee && npm run uglify",
+    "test": "jasmine"
   },
   "repository": {
     "type": "git",
@@ -24,5 +26,12 @@
     "url": "https://github.com/phazelift/chars.js/issues"
   },
   "homepage": "https://github.com/phazelift/chars.js",
-  "dependencies": { "types.js": "1.3.9" }
+  "dependencies": {
+    "types.js": "latest"
+  },
+  "devDependencies": {
+    "@babel/core": "latest",
+    "@babel/preset-env": "latest",
+    "jasmine": "latest"
+  }
 }

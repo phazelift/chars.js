@@ -26,11 +26,9 @@
 
 "use strict"
 
-# load dependencies
 if window? then _= window.Types
 else if module? then _= require 'types.js'
 
-# some tools
 
 mapStringToNumber= ( array ) ->
 	return 0 if _.notArray array
@@ -38,8 +36,6 @@ mapStringToNumber= ( array ) ->
 		return index if _.isNaN nr= parseInt array[index], 10
 		array[ index ]= nr
 	return array.length
-
-# extend the following to Chars later
 
 _.inRange= ( nr, range ) ->
 	return false if (_.isNaN nr= parseInt nr, 10) or (mapStringToNumber( range ) < 2)
@@ -57,9 +53,9 @@ _.random= ( min, max ) ->
 	max= (max- min)+ 1
 	return Math.floor ( Math.random()* max )+ min
 
-#											Chars
 
-class Chars extends _
+
+class Chars
 
 	@ASCII_RANGE_UPPERCASE	: [65, 90]
 	@ASCII_RANGE_LOWERCASE	: [97, 122]
@@ -89,20 +85,17 @@ class Chars extends _
 		max= _.limit( range[1], range )
 		return Chars.ascii _.random min, max
 
-# end statics
 
 	constructor: ( char, range ) ->
-		if not range? or _.notArray(range) then @range= Chars.ASCII_RANGE_ALL
-		else @range= range
-		@set char
+		@range = _.forceArray( range, Chars.ASCII_RANGE_ALL );
+		@char = @set char
 
 	get: -> @char
 	set: ( char ) ->
-		if _.isNumber(char) and char > 9
-			# we have an ordinal here
-			@char= Chars.ascii _.limit( char, @range )
-		else @char= _.forceString char?[0], Chars.ascii @range[0]
-		return @char
+		return if _.isNumber(char) and char > 9 
+			# handle ordinal argument
+			Chars.ascii _.limit( char, @range )
+		else _.forceString char?[0], Chars.ascii @range[0]
 
 	next: ( amount ) -> @set @ordinal+ _.forceNumber( amount, 1 )
 	prev: ( amount ) -> @set @ordinal- _.forceNumber( amount, 1 )
@@ -120,8 +113,9 @@ class Chars extends _
 Object.defineProperty Chars::, 'ordinal', { get: -> Chars.ordinal @char }
 Object.defineProperty Chars::, 'ascii', { get: -> @char }
 
-Chars._ = _
 
-# export Chars
+Chars.types = Chars._ = _
+
+
 if module? then module.exports= Chars
 else if window? then window.Chars= Chars
