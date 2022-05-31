@@ -1,12 +1,12 @@
 {
   "name": "chars.js",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "A single-ascii-character utility",
   "main": "chars.min.js",
   "scripts": {
-    "uglify": "uglifyjs chars.js -c -m -o chars.min.js",
     "build": "coffee -c --transpile chars.coffee && npm run uglify",
-    "test": "jasmine"
+    "test": "jasmine",
+	 "uglify": "terser chars.js -c -m -o chars.min.js"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,7 @@
     "ascii",
     "ordinal"
   ],
-  "author": "Dennis Raymondo <phazelift@gmail.com> (https://github.com/phazelift/)",
+  "author": "dennis raymondo van der sluis",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/phazelift/chars.js/issues"

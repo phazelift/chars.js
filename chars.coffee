@@ -92,7 +92,7 @@ class Chars
 
 	get: -> @char
 	set: ( char ) ->
-		return if _.isNumber(char) and char > 9 
+		return if _.isNumber(char) and char > 9
 			# handle ordinal argument
 			Chars.ascii _.limit( char, @range )
 		else _.forceString char?[0], Chars.ascii @range[0]

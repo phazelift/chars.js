@@ -1,4 +1,4 @@
-const Chars = require( '../chars.min.js' );
+
 //
 
 describe("ascii( ordinal )", function() {
